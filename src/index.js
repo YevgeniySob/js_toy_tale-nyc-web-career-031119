@@ -3,8 +3,6 @@ const toyForm = document.querySelector('.container');
 const toyDiv = document.querySelector('#toy-collection');
 let addToy = false;
 
-// YOUR CODE HERE
-
 addBtn.addEventListener('click', () => {
   // hide & seek with the form
   addToy = !addToy
@@ -14,8 +12,7 @@ addBtn.addEventListener('click', () => {
   } else {
     toyForm.style.display = 'none'
   }
-})
-
+});
 
   const createToy = function(toy){
     toyDiv.innerHTML += `<div class="card">
@@ -57,12 +54,6 @@ addBtn.addEventListener('click', () => {
       })
         .then(res => res.json())
         .then(toy => {
-          // add it here
-          // pessimistic rendering
-          // knowing for sure the fetch succeeded THEN slappin' on da DOM
-          // GUARENTEE it done happened
-          // but slower
-          // .appendChild(createAnimalRow(animalObj))
           createToy(toy);
         });
       form.reset()
@@ -106,4 +97,4 @@ addBtn.addEventListener('click', () => {
       }
     })
   });
-  
+
